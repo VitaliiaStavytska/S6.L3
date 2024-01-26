@@ -1,0 +1,26 @@
+
+import numpy as np
+import pandas as pd
+
+print("1.Andiamo a questo link e scarichiamo il dataset Wine.")
+
+wine_table = pd.read_csv("wine.csv")
+
+print(wine_table.head)
+
+numeric_columns = wine_table.select_dtypes(include = np.number)
+
+media = numeric_columns.mean()
+print(media)
+
+mediana = numeric_columns.median()
+print(mediana)
+
+moda = numeric_columns.mode()
+print(moda)
+
+quartili = numeric_columns.quantile([0.25, 0.5, 0.75])
+print(quartili)
+
+numerosita =numeric_columns.count()
+print(numerosita)

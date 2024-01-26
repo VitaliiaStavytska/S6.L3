@@ -1,0 +1,31 @@
+
+import numpy as np
+import pandas as pd
+
+Iris_table = pd.read_csv("Iris.csv")
+
+print(Iris_table)
+
+print("Prime cinque righe:")
+print(Iris_table.head())
+
+print("\nNomi delle colonne:")
+print(Iris_table.columns)
+print("No, non la discrivono.")
+
+nomi_per_colonne = ("sepal length in cm", "sepal width in cm", "petal length in cm", "petal width in cm", "class")
+
+print(nomi_per_colonne)
+
+Iris_table.columns = nomi_per_colonne
+
+print("Prime cinque righe con nuovi nomi delle colonne:")
+print(Iris_table.head())
+
+print("Ultime dieci righe con nuovi nomi delle colonne:")
+print(Iris_table.tail(10))
+
+descrizioni = (Iris_table.describe())
+print("Riepilogo dei descrittori statistici:")
+print(descrizioni)
+
